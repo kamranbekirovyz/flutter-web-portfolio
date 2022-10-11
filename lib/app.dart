@@ -9,9 +9,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Kamran Bekirov',
       home: const LandingScreen(),
       theme: ThemeData(
         textTheme: GoogleFonts.ubuntuTextTheme(),
+        highlightColor: Colors.white,
       ),
     );
   }

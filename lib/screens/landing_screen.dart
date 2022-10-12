@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -203,6 +202,41 @@ class _LandingScreenState extends State<LandingScreen> {
                       children: apps.map((e) {
                         return ShowcaseAppItem(e);
                       }).toList(),
+                    ),
+                    const SizedBox(height: 120.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            launchUrl(AppConstants.flutterWebSiteURL);
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+                            child: Image.asset(
+                              'assets/images/lockup_built-w-flutter.png',
+                              color: Colors.white,
+                              height: 40.0,
+                            ),
+                          ),
+                          // iconSize: 120.0,
+                        ),
+                        const SizedBox(width: 8.0),
+                        TextButton(
+                          onPressed: () {
+                            launchUrl(AppConstants.gitHubProfileUrl);
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+                            child: Icon(
+                              FontAwesomeIcons.github,
+                              color: Colors.white,
+                              size: 44.0,
+                            ),
+                          ),
+                          // iconSize: 120.0,
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 120.0),
                   ],

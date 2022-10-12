@@ -28,7 +28,13 @@ class ShowcaseAppItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              app.isNetworkImage ? Image.network(app.image) : Image.asset(app.image),
+              app.isNetworkImage
+                  ? Image.network(
+                      app.image,
+                    )
+                  : Image.asset(
+                      app.image,
+                    ),
               Container(
                 height: 201.0,
                 padding: const EdgeInsets.all(24.0).copyWith(bottom: 16.0),

@@ -35,7 +35,7 @@ const apps = [
   ShowcaseApp.withLocalAsset(
     name: 'Badamlı',
     image: 'assets/images/apps/badamli.png',
-    playStoreURL: 'https://play.google.com/store/apps/details?id=com.badamli.app',
+    playStoreURL: 'https://play.google.com/store/apps/details?id=az.badamli.app',
     appStoreURL: 'https://apps.apple.com/az/app/badaml%C4%B1/id1627914279',
   ),
   ShowcaseApp.withNetworkAsset(
@@ -47,7 +47,7 @@ const apps = [
   ShowcaseApp.withLocalAsset(
     name: 'CİB',
     image: 'assets/images/apps/cib.png',
-    playStoreURL: 'https://play.google.com/store/apps/details?id=com.cib.app',
+    playStoreURL: 'https://play.google.com/store/apps/details?id=az.cib.app',
     appStoreURL: 'https://apps.apple.com/us/app/cib-az/id1541577214',
   ),
   ShowcaseApp.withNetworkAsset(

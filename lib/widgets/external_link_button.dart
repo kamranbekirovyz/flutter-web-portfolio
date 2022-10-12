@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kamranbekirovcom_website/helpers/url_launcher.dart';
 
 class ExternalLinkButton extends StatelessWidget {
   final String url;
@@ -15,7 +16,9 @@ class ExternalLinkButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+        launchUrl(url);
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: Row(

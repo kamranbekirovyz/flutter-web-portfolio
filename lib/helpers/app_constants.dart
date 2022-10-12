@@ -4,4 +4,6 @@ abstract class AppConstants {
   static const instagramProfileUrl = 'https://instagram.com/kamranbekirovyz';
   static const facebookProfileUrl = 'https://www.facebook.com/profile.php?id=100067620484373';
   static const eMail = 'mailto:kamranbekirovyz@gmail.com';
+  static const flutterWebSiteURL = 'https://flutter.dev';
+  static const openSourceRepoURL = 'https://github.com/kamranbekirovyz';
 }

@@ -19,7 +19,13 @@ class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
     _y = 0.0;
 
     widget.scrollController.addListener(() {
-      setState(() => _y = widget.scrollController.offset);
+      final offset = widget.scrollController.offset;
+
+      /// Only update alignment of the background image while it is visible.
+      if (offset < 500) {
+        /// Divide current scroll offset by 1000 to make it more smooth.
+        setState(() => _y = widget.scrollController.offset / 1000);
+      }
     });
   }
 
@@ -31,7 +37,7 @@ class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
         image: DecorationImage(
           image: const AssetImage('assets/images/background-min.jpg'),
           fit: BoxFit.cover,
-          alignment: Alignment(500, _y / 1750),
+          alignment: Alignment(0.0, _y),
         ),
       ),
     );

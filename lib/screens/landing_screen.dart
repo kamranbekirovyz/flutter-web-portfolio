@@ -1,17 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:kamranbekirovcom_website/domain/showcase_app.dart';
+import 'package:kamranbekirovcom_website/helpers/app_constants.dart';
+import 'package:kamranbekirovcom_website/helpers/url_launcher.dart';
+import 'package:kamranbekirovcom_website/widgets/animated_background_image.dart';
+import 'package:kamranbekirovcom_website/widgets/showcase_app_item.dart';
 
 const dividerColor = Color.fromRGBO(70, 71, 81, 1.0);
 const primaryColor = Color.fromRGBO(47, 49, 64, 1.0);
+const cardColor = Color.fromRGBO(54, 56, 72, 1.0);
 
-class LandingScreen extends StatelessWidget {
+class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});
+
+  @override
+  State<LandingScreen> createState() => _LandingScreenState();
+}
+
+class _LandingScreenState extends State<LandingScreen> {
+  late final ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
       body: Scrollbar(
+        controller: _scrollController,
         child: SingleChildScrollView(
+          controller: _scrollController,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -19,17 +47,7 @@ class LandingScreen extends StatelessWidget {
                 clipper: DiagonalPathClipperTwo(),
                 child: Stack(
                   children: [
-                    Container(
-                      height: 552.0,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/background.jpg'),
-                          fit: BoxFit.cover,
-                          // TODO: animate background image while scrolling may be?
-                          alignment: Alignment.center,
-                        ),
-                      ),
-                    ),
+                    AnimatedBackgroundImage(_scrollController),
                     Container(
                       height: 552.0,
                       width: double.maxFinite,
@@ -42,8 +60,8 @@ class LandingScreen extends StatelessWidget {
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          SelectableText(
+                        children: [
+                          const SelectableText(
                             'KAMRAN BEKIROV',
                             style: TextStyle(
                               fontSize: 40.0,
@@ -52,13 +70,13 @@ class LandingScreen extends StatelessWidget {
                               letterSpacing: 4.0,
                             ),
                           ),
-                          SizedBox(height: 22.0),
-                          Divider(
+                          const SizedBox(height: 22.0),
+                          const Divider(
                             thickness: 1.75,
                             color: dividerColor,
                           ),
-                          SizedBox(height: 30.0),
-                          SelectableText(
+                          const SizedBox(height: 30.0),
+                          const SelectableText(
                             'FLUTTER BY DAY, FLUTTER BY NIGHT (INCLUDING WEEKENDS)',
                             style: TextStyle(
                               fontSize: 17.0,
@@ -67,6 +85,68 @@ class LandingScreen extends StatelessWidget {
                               letterSpacing: 1.8,
                             ),
                           ),
+                          const SizedBox(height: 24.0),
+                          Row(
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  launchUrl(AppConstants.gitHubProfileUrl);
+                                },
+                                icon: const Icon(
+                                  FontAwesomeIcons.github,
+                                  color: Colors.white,
+                                  size: 30.0,
+                                ),
+                              ),
+                              const SizedBox(width: 18.0),
+                              Transform.scale(
+                                scale: 1.1,
+                                child: IconButton(
+                                  onPressed: () {
+                                    launchUrl(AppConstants.eMail);
+                                  },
+                                  icon: const Icon(
+                                    Icons.alternate_email_rounded,
+                                    color: Colors.white,
+                                    size: 30.0,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 18.0),
+                              IconButton(
+                                onPressed: () {
+                                  launchUrl(AppConstants.linkedInProfileUrl);
+                                },
+                                icon: const Icon(
+                                  FontAwesomeIcons.linkedin,
+                                  color: Colors.white,
+                                  size: 30.0,
+                                ),
+                              ),
+                              const SizedBox(width: 16.0),
+                              IconButton(
+                                onPressed: () {
+                                  launchUrl(AppConstants.facebookProfileUrl);
+                                },
+                                icon: const Icon(
+                                  FontAwesomeIcons.facebook,
+                                  color: Colors.white,
+                                  size: 30.0,
+                                ),
+                              ),
+                              const SizedBox(width: 16.0),
+                              IconButton(
+                                onPressed: () {
+                                  launchUrl(AppConstants.instagramProfileUrl);
+                                },
+                                icon: const Icon(
+                                  FontAwesomeIcons.instagram,
+                                  color: Colors.white,
+                                  size: 30.0,
+                                ),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -78,8 +158,8 @@ class LandingScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 104.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
+                  children: [
+                    const SelectableText(
                       'SHOWCASE',
                       style: TextStyle(
                         fontSize: 21.0,
@@ -88,14 +168,14 @@ class LandingScreen extends StatelessWidget {
                         letterSpacing: 3.0,
                       ),
                     ),
-                    SizedBox(height: 18.0),
-                    Divider(
+                    const SizedBox(height: 16.0),
+                    const Divider(
                       thickness: 1.75,
                       color: dividerColor,
                     ),
-                    SizedBox(height: 18.0),
-                    SelectableText(
-                      'FLUTTER BY DAY, FLUTTER BY NIGHT (INCLUDING WEEKENDS)',
+                    const SizedBox(height: 16.0),
+                    const SelectableText(
+                      'MOBILE APPLICATIONS EITHER DEVELOPED COMPLETELY BY ME OR BY A TEAM WHERE I PARTICIPATED SIGNIFICANTLY',
                       style: TextStyle(
                         fontSize: 17.0,
                         fontWeight: FontWeight.w900,
@@ -103,6 +183,24 @@ class LandingScreen extends StatelessWidget {
                         letterSpacing: 1.8,
                       ),
                     ),
+                    const SizedBox(height: 24.0),
+                    const SelectableText(
+                      'I do not claim ownership of projects below as some of them developed for companies I worked for and some for clients/clients of my clients while backend side is provided.',
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.white,
+                        letterSpacing: 1.8,
+                      ),
+                    ),
+                    const SizedBox(height: 56.0),
+                    Wrap(
+                      spacing: 24.0,
+                      runSpacing: 24.0,
+                      children: apps.map((e) {
+                        return ShowcaseAppItem(e);
+                      }).toList(),
+                    ),
+                    const SizedBox(height: 120.0),
                   ],
                 ),
               ),

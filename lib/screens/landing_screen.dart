@@ -1,4 +1,6 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kamranbekirovcom_website/domain/showcase_app.dart';
 import 'package:kamranbekirovcom_website/helpers/app_constants.dart';
@@ -61,13 +63,15 @@ class _LandingScreenState extends State<LandingScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SelectableText(
-                            'KAMRAN BEKIROV',
-                            style: TextStyle(
-                              fontSize: 40.0,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
-                              letterSpacing: 4.0,
+                          SlitInDiagonal(
+                            child: const SelectableText(
+                              'KAMRAN BEKIROV',
+                              style: TextStyle(
+                                fontSize: 40.0,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                                letterSpacing: 4.0,
+                              ),
                             ),
                           ),
                           const SizedBox(height: 22.0),

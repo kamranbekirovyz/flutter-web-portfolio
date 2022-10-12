@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       title: 'Kamran Bekirov',
       home: const LandingScreen(),
       theme: ThemeData(
-        textTheme: GoogleFonts.ubuntuTextTheme(),
+        textTheme: GoogleFonts.notoSansTextTheme(),
         highlightColor: Colors.white,
       ),
     );

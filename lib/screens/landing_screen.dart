@@ -6,6 +6,8 @@ import 'package:kamranbekirovcom_website/helpers/app_constants.dart';
 import 'package:kamranbekirovcom_website/helpers/url_launcher.dart';
 import 'package:kamranbekirovcom_website/widgets/animated_background_image.dart';
 import 'package:kamranbekirovcom_website/widgets/showcase_app_item.dart';
+import 'package:responsive_framework/responsive_framework.dart';
+import 'package:responsive_grid/responsive_grid.dart';
 
 const dividerColor = Color.fromRGBO(70, 71, 81, 1.0);
 const primaryColor = Color.fromRGBO(47, 49, 64, 1.0);
@@ -55,9 +57,17 @@ class _LandingScreenState extends State<LandingScreen> {
                       color: primaryColor.withOpacity(.75),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 280.0,
-                        vertical: 180.0,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: ResponsiveWrapper.of(context).isDesktop
+                            ? 280.0
+                            : ResponsiveWrapper.of(context).isMobile
+                                ? 64
+                                : 200,
+                        vertical: ResponsiveWrapper.of(context).isDesktop
+                            ? 180.0
+                            : ResponsiveWrapper.of(context).isMobile
+                                ? 48
+                                : 90,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -158,7 +168,13 @@ class _LandingScreenState extends State<LandingScreen> {
               ),
               const SizedBox(height: 56.0),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 104.0),
+                padding: EdgeInsets.symmetric(
+                  horizontal: ResponsiveWrapper.of(context).isDesktop
+                      ? 104.0
+                      : ResponsiveWrapper.of(context).isTablet
+                          ? 56
+                          : 24.0,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -196,13 +212,27 @@ class _LandingScreenState extends State<LandingScreen> {
                       ),
                     ),
                     const SizedBox(height: 56.0),
-                    Wrap(
-                      spacing: 24.0,
-                      runSpacing: 24.0,
+                    ResponsiveGridList(
+                      shrinkWrap: true,
+                      minSpacing: 24.0,
+                      desiredItemWidth: 296,
                       children: apps.map((e) {
                         return ShowcaseAppItem(e);
                       }).toList(),
                     ),
+                    // Container(
+                    //   alignment: Alignment.center,
+                    //   child: Wrap(
+                    //     alignment: WrapAlignment.center,
+                    //     runAlignment: WrapAlignment.center,
+                    //     crossAxisAlignment: WrapCrossAlignment.center,
+                    //     spacing: 24.0,
+                    //     runSpacing: 24.0,
+                    //     children: apps.map((e) {
+                    //       return ShowcaseAppItem(e);
+                    //     }).toList(),
+                    //   ),
+                    // ),
                     const SizedBox(height: 120.0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

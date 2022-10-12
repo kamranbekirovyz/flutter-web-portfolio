@@ -1,4 +1,5 @@
 abstract class AppConstants {
+  static const appTitle = 'Kamran Bekirov';
   static const gitHubProfileUrl = 'https://github.com/kamranbekirovyz';
   static const linkedInProfileUrl = 'https://linkedin.com/in/kamranbekirovyz';
   static const instagramProfileUrl = 'https://instagram.com/kamranbekirovyz';

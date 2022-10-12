@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kamranbekirovcom_website/helpers/app_constants.dart';
 import 'package:kamranbekirovcom_website/screens/landing_screen.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,7 +11,21 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Kamran Bekirov',
+      title: AppConstants.appTitle,
+      builder: (context, child) {
+        return ResponsiveWrapper.builder(
+          ClampingScrollWrapper.builder(context, child!),
+          minWidth: 450,
+          debugLog: true,
+          breakpoints: [
+            const ResponsiveBreakpoint.resize(450, name: MOBILE),
+            const ResponsiveBreakpoint.autoScale(800, name: TABLET),
+            const ResponsiveBreakpoint.autoScale(1000, name: TABLET),
+            const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
+          ],
+          background: Container(color: primaryColor),
+        );
+      },
       home: const LandingScreen(),
       theme: ThemeData(
         textTheme: GoogleFonts.notoSansTextTheme(),

@@ -28,7 +28,7 @@ class App extends StatelessWidget {
       },
       home: const LandingScreen(),
       theme: ThemeData(
-        textTheme: GoogleFonts.notoSansTextTheme(),
+        textTheme: GoogleFonts.ubuntuTextTheme(),
       ),
     );
   }

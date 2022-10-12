@@ -29,7 +29,7 @@ class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
       height: 552.0,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: const AssetImage('assets/images/background.jpg'),
+          image: const AssetImage('assets/images/background-min.jpg'),
           fit: BoxFit.cover,
           alignment: Alignment(500, _y / 1750),
         ),

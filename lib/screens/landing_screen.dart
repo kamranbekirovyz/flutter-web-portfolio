@@ -3,9 +3,11 @@ import 'package:flutter_animator/flutter_animator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kamranbekirovcom_website/domain/showcase_app.dart';
 import 'package:kamranbekirovcom_website/helpers/app_constants.dart';
-import 'package:kamranbekirovcom_website/helpers/url_launcher.dart';
 import 'package:kamranbekirovcom_website/widgets/animated_background_image.dart';
+import 'package:kamranbekirovcom_website/widgets/bottom_external_links.dart';
+import 'package:kamranbekirovcom_website/widgets/scroll_up_indicator.dart';
 import 'package:kamranbekirovcom_website/widgets/showcase_app_item.dart';
+import 'package:kamranbekirovcom_website/widgets/social_media_button.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 
@@ -39,253 +41,182 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
-      body: Scrollbar(
-        controller: _scrollController,
-        child: SingleChildScrollView(
-          controller: _scrollController,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ClipPath(
-                clipper: DiagonalPathClipperTwo(),
-                child: Stack(
-                  children: [
-                    AnimatedBackgroundImage(_scrollController),
-                    Container(
-                      height: 552.0,
-                      width: double.maxFinite,
-                      color: primaryColor.withOpacity(.75),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: ResponsiveWrapper.of(context).isDesktop
-                            ? 280.0
-                            : ResponsiveWrapper.of(context).isMobile
-                                ? 64
-                                : 200,
-                        vertical: ResponsiveWrapper.of(context).isDesktop
-                            ? 180.0
-                            : ResponsiveWrapper.of(context).isMobile
-                                ? 48
-                                : 90,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SlitInDiagonal(
-                            child: const SelectableText(
-                              'KAMRAN BEKIROV',
-                              style: TextStyle(
-                                fontSize: 40.0,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                                letterSpacing: 4.0,
-                              ),
-                            ),
+      body: Stack(
+        children: [
+          Scrollbar(
+            controller: _scrollController,
+            child: SingleChildScrollView(
+              controller: _scrollController,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipPath(
+                    clipper: DiagonalPathClipper(),
+                    child: Stack(
+                      children: [
+                        AnimatedBackgroundImage(_scrollController),
+                        Container(
+                          height: 552.0,
+                          width: double.maxFinite,
+                          color: primaryColor.withOpacity(.75),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: ResponsiveWrapper.of(context).isDesktop
+                                ? 280.0
+                                : ResponsiveWrapper.of(context).isMobile
+                                    ? 64
+                                    : 200,
+                            vertical: ResponsiveWrapper.of(context).isDesktop
+                                ? 180.0
+                                : ResponsiveWrapper.of(context).isMobile
+                                    ? 48
+                                    : 90,
                           ),
-                          const SizedBox(height: 22.0),
-                          const Divider(
-                            thickness: 1.75,
-                            color: dividerColor,
-                          ),
-                          const SizedBox(height: 30.0),
-                          const SelectableText(
-                            'FLUTTER BY DAY, FLUTTER BY NIGHT (INCLUDING WEEKENDS)',
-                            style: TextStyle(
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white,
-                              letterSpacing: 1.8,
-                            ),
-                          ),
-                          const SizedBox(height: 24.0),
-                          Row(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              IconButton(
-                                onPressed: () {
-                                  launchUrl(AppConstants.gitHubProfileUrl);
-                                },
-                                icon: const Icon(
-                                  FontAwesomeIcons.github,
-                                  color: Colors.white,
-                                  size: 30.0,
-                                ),
-                              ),
-                              const SizedBox(width: 18.0),
-                              Transform.scale(
-                                scale: 1.1,
-                                child: IconButton(
-                                  onPressed: () {
-                                    launchUrl(AppConstants.eMail);
-                                  },
-                                  icon: const Icon(
-                                    Icons.alternate_email_rounded,
+                              SlitInDiagonal(
+                                child: const SelectableText(
+                                  AppConstants.landingTitle,
+                                  style: TextStyle(
+                                    fontSize: 40.0,
+                                    fontWeight: FontWeight.w900,
                                     color: Colors.white,
-                                    size: 30.0,
+                                    letterSpacing: 4.0,
                                   ),
                                 ),
                               ),
-                              const SizedBox(width: 18.0),
-                              IconButton(
-                                onPressed: () {
-                                  launchUrl(AppConstants.linkedInProfileUrl);
-                                },
-                                icon: const Icon(
-                                  FontAwesomeIcons.linkedin,
+                              const SizedBox(height: 22.0),
+                              const Divider(
+                                thickness: 1.75,
+                                color: dividerColor,
+                              ),
+                              const SizedBox(height: 30.0),
+                              const SelectableText(
+                                AppConstants.landingMotto,
+                                style: TextStyle(
+                                  fontSize: 17.0,
+                                  fontWeight: FontWeight.w400,
                                   color: Colors.white,
-                                  size: 30.0,
+                                  letterSpacing: 1.8,
                                 ),
                               ),
-                              const SizedBox(width: 16.0),
-                              IconButton(
-                                onPressed: () {
-                                  launchUrl(AppConstants.facebookProfileUrl);
-                                },
-                                icon: const Icon(
-                                  FontAwesomeIcons.facebook,
-                                  color: Colors.white,
-                                  size: 30.0,
-                                ),
-                              ),
-                              const SizedBox(width: 16.0),
-                              IconButton(
-                                onPressed: () {
-                                  launchUrl(AppConstants.instagramProfileUrl);
-                                },
-                                icon: const Icon(
-                                  FontAwesomeIcons.instagram,
-                                  color: Colors.white,
-                                  size: 30.0,
-                                ),
-                              ),
+                              const SizedBox(height: 24.0),
+                              _buildSocialMediaButtons()
                             ],
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 56.0),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: ResponsiveWrapper.of(context).isDesktop
-                      ? 104.0
-                      : ResponsiveWrapper.of(context).isTablet
-                          ? 56
-                          : 24.0,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SelectableText(
-                      'SHOWCASE',
-                      style: TextStyle(
-                        fontSize: 21.0,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: 3.0,
-                      ),
-                    ),
-                    const SizedBox(height: 16.0),
-                    const Divider(
-                      thickness: 1.75,
-                      color: dividerColor,
-                    ),
-                    const SizedBox(height: 16.0),
-                    const SelectableText(
-                      'MOBILE APPLICATIONS EITHER DEVELOPED COMPLETELY BY ME OR BY A TEAM WHERE I PARTICIPATED SIGNIFICANTLY',
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: 1.8,
-                      ),
-                    ),
-                    const SizedBox(height: 24.0),
-                    const SelectableText(
-                      'I do not claim ownership of projects below as some of them developed for companies I worked for and some for clients/clients of my clients while backend side is provided.',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        color: Colors.white,
-                        letterSpacing: 1.8,
-                      ),
-                    ),
-                    const SizedBox(height: 56.0),
-                    ResponsiveGridList(
-                      shrinkWrap: true,
-                      minSpacing: 24.0,
-                      desiredItemWidth: 296,
-                      children: apps.map((e) {
-                        return ShowcaseAppItem(e);
-                      }).toList(),
-                    ),
-                    // Container(
-                    //   alignment: Alignment.center,
-                    //   child: Wrap(
-                    //     alignment: WrapAlignment.center,
-                    //     runAlignment: WrapAlignment.center,
-                    //     crossAxisAlignment: WrapCrossAlignment.center,
-                    //     spacing: 24.0,
-                    //     runSpacing: 24.0,
-                    //     children: apps.map((e) {
-                    //       return ShowcaseAppItem(e);
-                    //     }).toList(),
-                    //   ),
-                    // ),
-                    const SizedBox(height: 120.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            launchUrl(AppConstants.flutterWebSiteURL);
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
-                            child: Image.asset(
-                              'assets/images/lockup_built-w-flutter.png',
-                              color: Colors.white,
-                              height: 40.0,
-                            ),
                           ),
-                          // iconSize: 120.0,
-                        ),
-                        const SizedBox(width: 8.0),
-                        TextButton(
-                          onPressed: () {
-                            launchUrl(AppConstants.gitHubProfileUrl);
-                          },
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
-                            child: Icon(
-                              FontAwesomeIcons.github,
-                              color: Colors.white,
-                              size: 44.0,
-                            ),
-                          ),
-                          // iconSize: 120.0,
                         ),
                       ],
                     ),
-                    const SizedBox(height: 120.0),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 56.0),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: ResponsiveWrapper.of(context).isDesktop
+                          ? 104.0
+                          : ResponsiveWrapper.of(context).isTablet
+                              ? 56
+                              : 24.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SelectableText(
+                          AppConstants.showcaseTitle,
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(height: 16.0),
+                        const Divider(
+                          thickness: 1.75,
+                          color: dividerColor,
+                        ),
+                        const SizedBox(height: 16.0),
+                        const SelectableText(
+                          AppConstants.showcaseDescription,
+                          style: TextStyle(
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            letterSpacing: 1.8,
+                          ),
+                        ),
+                        const SizedBox(height: 24.0),
+                        const SelectableText(
+                          AppConstants.disclaimer,
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(height: 56.0),
+                        ResponsiveGridList(
+                          shrinkWrap: true,
+                          minSpacing: 24.0,
+                          desiredItemWidth: 296,
+                          children: apps.map((e) {
+                            return ShowcaseAppItem(e);
+                          }).toList(),
+                        ),
+                        const SizedBox(height: 120.0),
+                        const BottomExternalLinks(),
+                        const SizedBox(height: 120.0),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
+          ScrollUpIndicator(_scrollController),
+        ],
       ),
+    );
+  }
+
+  Widget _buildSocialMediaButtons() {
+    return Row(
+      children: const [
+        SocialMediaButton(
+          url: AppConstants.gitHubProfileURL,
+          iconData: FontAwesomeIcons.github,
+        ),
+        SizedBox(width: 18.0),
+        SocialMediaButton(
+          url: AppConstants.eMail,
+          iconData: Icons.alternate_email_rounded,
+        ),
+        SizedBox(width: 18.0),
+        SocialMediaButton(
+          url: AppConstants.linkedInProfileURL,
+          iconData: FontAwesomeIcons.linkedin,
+        ),
+        SizedBox(width: 16.0),
+        SocialMediaButton(
+          url: AppConstants.facebookProfileURL,
+          iconData: FontAwesomeIcons.facebook,
+        ),
+        SizedBox(width: 16.0),
+        SocialMediaButton(
+          url: AppConstants.instagramProfileURL,
+          iconData: FontAwesomeIcons.instagram,
+        ),
+      ],
     );
   }
 }
 
-class DiagonalPathClipperTwo extends CustomClipper<Path> {
+/// Extracted from "flutter_custom_clippers" package.
+class DiagonalPathClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     final path = Path()
       ..lineTo(0.0, size.height)
-      ..lineTo(size.width, size.height - 112)
+      ..lineTo(size.width, size.height - 112.0)
       ..lineTo(size.width, 0.0)
       ..close();
     return path;

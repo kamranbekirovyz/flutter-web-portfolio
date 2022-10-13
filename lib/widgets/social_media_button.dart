@@ -31,9 +31,9 @@ class _SocialMediaButtonState extends State<SocialMediaButton> {
     return MouseRegion(
       onEnter: (event) => setState(() => _hovered = true),
       onExit: (event) => setState(() => _hovered = false),
-      child: AnimatedScale(
+      child: AnimatedOpacity(
         duration: kThemeAnimationDuration,
-        scale: _hovered ? 1.1 : 1.0,
+        opacity: _hovered ? 1.0 : .6,
         child: IconButton(
           onPressed: () => launchUrl(widget.url),
           icon: Icon(

@@ -27,7 +27,7 @@ class ExternalLinkButton extends StatelessWidget {
               iconData,
               color: Colors.white,
             ),
-            const SizedBox(width: 20.0),
+            const SizedBox(width: 24.0),
             Text(
               label.toUpperCase(),
               style: const TextStyle(

@@ -34,23 +34,23 @@ class _ScrollUpIndicatorState extends State<ScrollUpIndicator> {
     return AnimatedSwitcher(
       duration: kThemeAnimationDuration,
       child: _visible
-          ? GestureDetector(
-              onTap: () {
-                widget.scrollController.animateTo(
-                  0,
-                  duration: const Duration(seconds: 1),
-                  curve: Curves.ease,
-                );
-              },
-              child: Container(
-                width: double.maxFinite,
-                height: 56.0,
-                alignment: Alignment.centerLeft,
-                color: cardColor.withOpacity(.9),
+          ? Container(
+              width: double.maxFinite,
+              height: 56.0,
+              alignment: Alignment.centerLeft,
+              color: cardColor.withOpacity(.9),
+              child: GestureDetector(
+                onTap: () {
+                  widget.scrollController.animateTo(
+                    0,
+                    duration: const Duration(seconds: 1),
+                    curve: Curves.ease,
+                  );
+                },
                 child: MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [

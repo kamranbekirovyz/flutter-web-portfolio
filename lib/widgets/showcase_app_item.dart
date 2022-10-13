@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kamranbekirovcom_website/domain/showcase_app.dart';
@@ -17,38 +19,54 @@ class ShowcaseAppItem extends StatefulWidget {
 }
 
 class _ShowcaseAppItemState extends State<ShowcaseAppItem> {
-  late bool _hovered;
+  bool _showingBack = false;
+  double _angle = 0;
 
-  @override
-  void initState() {
-    _hovered = false;
-    super.initState();
-  }
+  void _toggleAnimation() => setState(() => _angle = (_angle + pi) % (2 * pi));
 
   @override
   Widget build(BuildContext context) {
+    return TweenAnimationBuilder(
+      tween: Tween<double>(begin: 0.0, end: _angle),
+      duration: kThemeAnimationDuration * 2.5,
+      builder: (_, double value, __) {
+        _showingBack = value >= (pi / 2);
+
+        return Transform(
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, 0.001)
+            ..rotateY(value),
+          alignment: Alignment.center,
+          child: _showingBack
+              ? Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.identity()..rotateY(pi),
+                  child: _buildChild(),
+                )
+              : _buildChild(),
+        );
+      },
+    );
+  }
+
+  Widget _buildChild() {
     return MouseRegion(
-      onEnter: (event) => setState(() => _hovered = true),
-      onExit: (event) => setState(() => _hovered = false),
-      child: AnimatedScale(
-        duration: kThemeAnimationDuration,
-        scale: _hovered ? 1.02 : 1.0,
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(8.0),
-            topRight: Radius.circular(8.0),
-            bottomLeft: Radius.circular(4.0),
-            bottomRight: Radius.circular(4.0),
-          ),
-          child: Container(
-            color: cardColor,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildImage(),
-                _buildBottom(),
-              ],
-            ),
+      onExit: (_) => _toggleAnimation(),
+      child: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(8.0),
+          topRight: Radius.circular(8.0),
+          bottomLeft: Radius.circular(4.0),
+          bottomRight: Radius.circular(4.0),
+        ),
+        child: Container(
+          color: cardColor,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildImage(),
+              _buildBottom(),
+            ],
           ),
         ),
       ),
@@ -56,13 +74,7 @@ class _ShowcaseAppItemState extends State<ShowcaseAppItem> {
   }
 
   Widget _buildImage() {
-    return widget.app.isNetworkImage
-        ? Image.network(
-            widget.app.image,
-          )
-        : Image.asset(
-            widget.app.image,
-          );
+    return widget.app.isNetworkImage ? Image.network(widget.app.image) : Image.asset(widget.app.image);
   }
 
   Widget _buildBottom() {

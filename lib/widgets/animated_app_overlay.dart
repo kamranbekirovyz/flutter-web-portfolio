@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class AnimatedAppOverlay extends StatelessWidget {
   final bool hovered;
-  final List<String> topics;
+  final String topic;
 
   const AnimatedAppOverlay({
     Key? key,
     required this.hovered,
-    required this.topics,
+    required this.topic,
   }) : super(key: key);
 
   @override
@@ -19,7 +19,7 @@ class AnimatedAppOverlay extends StatelessWidget {
         alignment: Alignment.center,
         color: Colors.black54,
         child: Text(
-          topics.first,
+          topic,
           style: const TextStyle(
             fontSize: 24.0,
             color: Colors.white,

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kamranbekirovcom_website/domain/showcase_app.dart';
@@ -30,44 +28,44 @@ class _ShowcaseAppItemState extends State<ShowcaseAppItem> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) => setState(() => _hovered = true),
-      onExit: (_) => setState(() => _hovered = false),
-      child: Stack(
-        children: [
-          _buildChild(),
-          Positioned(
-            top: 0.0,
-            bottom: 200.0,
-            left: 0.0,
-            right: 0.0,
-            child: AnimatedAppOverlay(
-              hovered: _hovered,
-              topics: widget.app.topics,
+    return ClipRRect(
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(16.0),
+        topRight: Radius.circular(16.0),
+        bottomLeft: Radius.circular(4.0),
+        bottomRight: Radius.circular(4.0),
+      ),
+      child: MouseRegion(
+        onEnter: (_) => setState(() => _hovered = true),
+        onExit: (_) => setState(() => _hovered = false),
+        child: Stack(
+          children: [
+            _buildChild(),
+            Positioned(
+              top: 0.0,
+              bottom: 200.0,
+              left: 0.0,
+              right: 0.0,
+              child: AnimatedAppOverlay(
+                hovered: _hovered,
+                topic: widget.app.topic,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
   Widget _buildChild() {
-    return ClipRRect(
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(8.0),
-        topRight: Radius.circular(8.0),
-        bottomLeft: Radius.circular(4.0),
-        bottomRight: Radius.circular(4.0),
-      ),
-      child: Container(
-        color: cardColor,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildImage(),
-            _buildBottom(),
-          ],
-        ),
+    return Container(
+      color: cardColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildImage(),
+          _buildBottom(),
+        ],
       ),
     );
   }

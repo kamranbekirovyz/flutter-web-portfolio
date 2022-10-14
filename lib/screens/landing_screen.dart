@@ -11,7 +11,7 @@ import 'package:kamranbekirovcom_website/widgets/social_media_button.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 
-const dividerColor = Color.fromRGBO(70, 71, 81, 1.0);
+const dividerColor = Color(0xFF464751);
 const primaryColor = Color.fromRGBO(47, 49, 64, 1.0);
 const cardColor = Color.fromRGBO(54, 56, 72, 1.0);
 

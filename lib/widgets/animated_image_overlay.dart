@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class AnimatedAppOverlay extends StatefulWidget {
+class AnimatedImageOverlay extends StatefulWidget {
   final String topic;
 
-  const AnimatedAppOverlay(
+  const AnimatedImageOverlay(
     this.topic, {
     Key? key,
   }) : super(key: key);
 
   @override
-  State<AnimatedAppOverlay> createState() => _AnimatedAppOverlayState();
+  State<AnimatedImageOverlay> createState() => _AnimatedImageOverlayState();
 }
 
-class _AnimatedAppOverlayState extends State<AnimatedAppOverlay> {
+class _AnimatedImageOverlayState extends State<AnimatedImageOverlay> {
   late bool _hovered;
 
   @override

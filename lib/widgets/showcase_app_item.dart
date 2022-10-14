@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kamranbekirovcom_website/domain/showcase_app.dart';
 import 'package:kamranbekirovcom_website/screens/landing_screen.dart';
-import 'package:kamranbekirovcom_website/widgets/animated_app_overlay.dart';
+import 'package:kamranbekirovcom_website/widgets/animated_image_overlay.dart';
 import 'package:kamranbekirovcom_website/widgets/external_link_button.dart';
 
 class ShowcaseAppItem extends StatelessWidget {
@@ -30,7 +30,7 @@ class ShowcaseAppItem extends StatelessWidget {
             bottom: 200.0,
             left: 0.0,
             right: 0.0,
-            child: AnimatedAppOverlay(app.topic),
+            child: AnimatedImageOverlay(app.topic),
           ),
         ],
       ),

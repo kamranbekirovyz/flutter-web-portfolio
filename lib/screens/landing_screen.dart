@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:kamranbekirovcom_website/domain/showcase_app.dart';
+import 'package:kamranbekirovcom_website/models/showcase_app.dart';
 import 'package:kamranbekirovcom_website/helpers/app_constants.dart';
 import 'package:kamranbekirovcom_website/widgets/animated_background_image.dart';
 import 'package:kamranbekirovcom_website/widgets/bottom_external_links.dart';
@@ -210,7 +210,7 @@ class _LandingScreenState extends State<LandingScreen> {
   }
 }
 
-/// Extracted from "flutter_custom_clippers" package.
+// Extracted from "flutter_custom_clippers" package.
 class DiagonalPathClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {

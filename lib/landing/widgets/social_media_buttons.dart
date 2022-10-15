@@ -9,6 +9,7 @@ class SocialMediaButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: const [
         SocialMediaButton(
           index: 0,

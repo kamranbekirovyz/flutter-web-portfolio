@@ -14,12 +14,12 @@ class App extends StatelessWidget {
       builder: (context, child) {
         return ResponsiveWrapper.builder(
           ClampingScrollWrapper.builder(context, child!),
-          minWidth: 450,
+          minWidth: 300,
           debugLog: true,
+          defaultScale: true,
           breakpoints: [
-            const ResponsiveBreakpoint.resize(450, name: MOBILE),
+            const ResponsiveBreakpoint.autoScale(450, name: MOBILE),
             const ResponsiveBreakpoint.autoScale(800, name: TABLET),
-            const ResponsiveBreakpoint.autoScale(1000, name: TABLET),
             const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
           ],
           background: Container(color: primaryColor),

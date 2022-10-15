@@ -15,7 +15,6 @@ dependencies:
     sdk: flutter
   font_awesome_flutter: ^10.2.1
   responsive_framework: ^0.2.0
-  responsive_grid: ^2.1.0
 
 dev_dependencies:
   flutter_test:

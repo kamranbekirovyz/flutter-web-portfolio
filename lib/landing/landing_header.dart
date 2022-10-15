@@ -3,8 +3,9 @@ import 'package:app/utilities/app_constants.dart';
 import 'package:app/landing/landing_screen.dart';
 import 'package:app/landing/widgets/animated_background_image.dart';
 import 'package:app/landing/widgets/social_media_buttons.dart';
+import 'package:app/utilities/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_wrapper.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class LandingHeader extends StatelessWidget {
   final ScrollController scrollController;
@@ -25,15 +26,15 @@ class LandingHeader extends StatelessWidget {
 
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: ResponsiveWrapper.of(context).isDesktop
+              horizontal: context.isDesktop
                   ? 280.0
-                  : ResponsiveWrapper.of(context).isMobile
+                  : context.isMobile
                       ? 64
                       : 200,
-              vertical: ResponsiveWrapper.of(context).isDesktop
+              vertical: context.isDesktop
                   ? 180.0
-                  : ResponsiveWrapper.of(context).isMobile
-                      ? 48
+                  : context.isMobile
+                      ? 8
                       : 90,
             ),
             child: Column(
@@ -50,40 +51,46 @@ class LandingHeader extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 16.0),
-                    const DelayedWidget(
-                      delayDuration: Duration(milliseconds: 1000),
-                      from: DelayFrom.right,
-                      child: SelectableText(
-                        AppConstants.landingTitle,
-                        style: TextStyle(
-                          fontSize: 40.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          letterSpacing: 4.0,
+                    const Flexible(
+                      child: DelayedWidget(
+                        delayDuration: Duration(milliseconds: 1000),
+                        from: DelayFrom.right,
+                        child: SelectableText(
+                          AppConstants.landingTitle,
+                          style: TextStyle(
+                            fontSize: 40.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            letterSpacing: 4.0,
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 22.0),
-                const Divider(
-                  thickness: 1.75,
-                  color: dividerColor,
-                ),
-                const SizedBox(height: 30.0),
                 const DelayedWidget(
-                  delayDuration: Duration(milliseconds: 1500),
+                  delayDuration: Duration(milliseconds: 1400),
                   from: DelayFrom.top,
-                  child: SelectableText(
-                    AppConstants.landingMotto,
-                    style: TextStyle(
-                      fontSize: 17.0,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.white,
-                      letterSpacing: 1.8,
-                    ),
+                  child: Divider(
+                    thickness: 1.75,
+                    color: dividerColor,
                   ),
                 ),
+                const SizedBox(height: 30.0),
+                // const DelayedWidget(
+                //   delayDuration: Duration(milliseconds: 1500),
+                //   from: DelayFrom.top,
+                //   child: SelectableText(
+                //     AppConstants.landingMotto,
+                //     style: TextStyle(
+                //       fontSize: 17.0,
+                //       fontWeight: FontWeight.w400,
+                //       color: Colors.white,
+                //       letterSpacing: 1.8,
+                //     ),
+                //   ),
+                // ),
                 const SizedBox(height: 24.0),
                 const SocialMediaButtons()
               ],

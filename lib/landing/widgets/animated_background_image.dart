@@ -39,7 +39,7 @@ class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
         child: FadeInImage.assetNetwork(
           placeholder: 'assets/images/transparent.png',
           image: 'assets/images/background-min.jpg',
-          fit: BoxFit.fitWidth,
+          fit: BoxFit.cover,
           alignment: Alignment(0.0, _y),
         ),
       ),

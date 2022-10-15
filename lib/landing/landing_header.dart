@@ -1,9 +1,9 @@
+import 'package:app/landing/widgets/delayed_widget.dart';
 import 'package:app/utilities/app_constants.dart';
 import 'package:app/landing/landing_screen.dart';
 import 'package:app/landing/widgets/animated_background_image.dart';
 import 'package:app/landing/widgets/social_media_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animator/flutter_animator.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 
 class LandingHeader extends StatelessWidget {
@@ -50,8 +50,10 @@ class LandingHeader extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 16.0),
-                    SlitInDiagonal(
-                      child: const SelectableText(
+                    const DelayedWidget(
+                      delayDuration: Duration(milliseconds: 1000),
+                      from: DelayFrom.right,
+                      child: SelectableText(
                         AppConstants.landingTitle,
                         style: TextStyle(
                           fontSize: 40.0,
@@ -69,13 +71,17 @@ class LandingHeader extends StatelessWidget {
                   color: dividerColor,
                 ),
                 const SizedBox(height: 30.0),
-                const SelectableText(
-                  AppConstants.landingMotto,
-                  style: TextStyle(
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white,
-                    letterSpacing: 1.8,
+                const DelayedWidget(
+                  delayDuration: Duration(milliseconds: 1500),
+                  from: DelayFrom.top,
+                  child: SelectableText(
+                    AppConstants.landingMotto,
+                    style: TextStyle(
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                      letterSpacing: 1.8,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 24.0),

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_animator/widgets/fading_entrances/fade_in.dart';
-
 class AnimatedBackgroundImage extends StatefulWidget {
   final ScrollController scrollController;
 
@@ -36,15 +34,13 @@ class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
     return SizedBox(
       height: 576.0,
       width: double.maxFinite,
-      child: FadeIn(
-        child: Opacity(
-          opacity: 0.3,
-          child: FadeInImage.assetNetwork(
-            placeholder: 'assets/images/transparent.png',
-            image: 'assets/images/background-min.jpg',
-            fit: BoxFit.fitWidth,
-            alignment: Alignment(0.0, _y),
-          ),
+      child: Opacity(
+        opacity: 0.3,
+        child: FadeInImage.assetNetwork(
+          placeholder: 'assets/images/transparent.png',
+          image: 'assets/images/background-min.jpg',
+          fit: BoxFit.fitWidth,
+          alignment: Alignment(0.0, _y),
         ),
       ),
     );

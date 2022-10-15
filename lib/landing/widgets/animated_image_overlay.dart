@@ -38,7 +38,7 @@ class _AnimatedImageOverlayState extends State<AnimatedImageOverlay> {
             style: const TextStyle(
               fontSize: 24.0,
               color: Colors.white,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),

@@ -11,26 +11,31 @@ class SocialMediaButtons extends StatelessWidget {
     return Row(
       children: const [
         SocialMediaButton(
+          index: 0,
           url: AppConstants.gitHubProfileURL,
           iconData: FontAwesomeIcons.github,
         ),
         SizedBox(width: 18.0),
         SocialMediaButton(
+          index: 1,
           url: AppConstants.eMail,
           iconData: Icons.alternate_email_rounded,
         ),
         SizedBox(width: 18.0),
         SocialMediaButton(
+          index: 2,
           url: AppConstants.linkedInProfileURL,
           iconData: FontAwesomeIcons.linkedin,
         ),
         SizedBox(width: 16.0),
         SocialMediaButton(
+          index: 3,
           url: AppConstants.facebookProfileURL,
           iconData: FontAwesomeIcons.facebook,
         ),
         SizedBox(width: 16.0),
         SocialMediaButton(
+          index: 4,
           url: AppConstants.instagramProfileURL,
           iconData: FontAwesomeIcons.instagram,
         ),

@@ -1,7 +1,8 @@
+import 'package:app/widgets/animated_opacity_when_hovered.dart';
 import 'package:flutter/material.dart';
 import 'package:app/helpers/url_launcher.dart';
 
-class SocialMediaButton extends StatefulWidget {
+class SocialMediaButton extends StatelessWidget {
   final String url;
   final IconData iconData;
   final double size;
@@ -14,33 +15,14 @@ class SocialMediaButton extends StatefulWidget {
   });
 
   @override
-  State<SocialMediaButton> createState() => _SocialMediaButtonState();
-}
-
-class _SocialMediaButtonState extends State<SocialMediaButton> {
-  late bool _hovered;
-
-  @override
-  void initState() {
-    _hovered = false;
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (event) => setState(() => _hovered = true),
-      onExit: (event) => setState(() => _hovered = false),
-      child: AnimatedOpacity(
-        duration: kThemeAnimationDuration,
-        opacity: _hovered ? 1.0 : .6,
-        child: IconButton(
-          onPressed: () => launchUrl(widget.url),
-          icon: Icon(
-            widget.iconData,
-            color: Colors.white,
-            size: widget.size,
-          ),
+    return AnimatedOpacityWhenHovered(
+      child: IconButton(
+        onPressed: () => launchUrl(url),
+        icon: Icon(
+          iconData,
+          color: Colors.white,
+          size: size,
         ),
       ),
     );

@@ -1,13 +1,13 @@
+import 'package:app/widgets/built_with_flutter_indicator.dart';
+import 'package:app/widgets/social_media_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:app/models/showcase_app.dart';
 import 'package:app/helpers/app_constants.dart';
 import 'package:app/widgets/animated_background_image.dart';
 import 'package:app/widgets/bottom_external_links.dart';
 import 'package:app/widgets/scroll_up_indicator.dart';
 import 'package:app/widgets/showcase_app_item.dart';
-import 'package:app/widgets/social_media_button.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 
@@ -103,7 +103,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                 ),
                               ),
                               const SizedBox(height: 24.0),
-                              _buildSocialMediaButtons()
+                              const SocialMediaButtons()
                             ],
                           ),
                         ),
@@ -173,39 +173,12 @@ class _LandingScreenState extends State<LandingScreen> {
             ),
           ),
           ScrollUpIndicator(_scrollController),
+          Align(
+            alignment: Alignment.topRight,
+            child: BuiltWithFlutterIndicator(_scrollController),
+          ),
         ],
       ),
-    );
-  }
-
-  Widget _buildSocialMediaButtons() {
-    return Row(
-      children: const [
-        SocialMediaButton(
-          url: AppConstants.gitHubProfileURL,
-          iconData: FontAwesomeIcons.github,
-        ),
-        SizedBox(width: 18.0),
-        SocialMediaButton(
-          url: AppConstants.eMail,
-          iconData: Icons.alternate_email_rounded,
-        ),
-        SizedBox(width: 18.0),
-        SocialMediaButton(
-          url: AppConstants.linkedInProfileURL,
-          iconData: FontAwesomeIcons.linkedin,
-        ),
-        SizedBox(width: 16.0),
-        SocialMediaButton(
-          url: AppConstants.facebookProfileURL,
-          iconData: FontAwesomeIcons.facebook,
-        ),
-        SizedBox(width: 16.0),
-        SocialMediaButton(
-          url: AppConstants.instagramProfileURL,
-          iconData: FontAwesomeIcons.instagram,
-        ),
-      ],
     );
   }
 }

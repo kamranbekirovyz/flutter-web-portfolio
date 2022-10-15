@@ -280,6 +280,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.1"
+  super_banners:
+    dependency: "direct main"
+    description:
+      name: super_banners
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   term_glyph:
     dependency: transitive
     description:

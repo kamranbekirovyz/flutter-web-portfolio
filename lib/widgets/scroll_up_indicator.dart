@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:app/helpers/app_constants.dart';
+import 'package:app/helpers/url_launcher.dart';
 import 'package:app/screens/landing_screen.dart';
+import 'package:flutter/material.dart';
 
 class ScrollUpIndicator extends StatefulWidget {
   final ScrollController scrollController;
@@ -47,35 +48,72 @@ class _ScrollUpIndicatorState extends State<ScrollUpIndicator> {
                     curve: Curves.ease,
                   );
                 },
-                child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(
-                          Icons.arrow_upward_rounded,
-                          color: Colors.white,
-                          size: 20.0,
-                        ),
-                        const SizedBox(width: 16.0),
-                        Text(
-                          AppConstants.webSiteURL.toUpperCase(),
-                          style: const TextStyle(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 2.5,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: _buildScrollUpTrigger(),
                     ),
-                  ),
+                    MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: _buildFlutterIndicator(),
+                    ),
+                  ],
                 ),
               ),
             )
           : const SizedBox.shrink(),
+    );
+  }
+
+  Widget _buildScrollUpTrigger() {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const SizedBox(width: 24.0),
+        const Icon(
+          Icons.arrow_upward_rounded,
+          color: Colors.white,
+          size: 20.0,
+        ),
+        const SizedBox(width: 16.0),
+        Text(
+          AppConstants.webSiteURL.toUpperCase(),
+          style: const TextStyle(
+            fontSize: 14.0,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 2.5,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(width: 24.0),
+      ],
+    );
+  }
+
+  Widget _buildFlutterIndicator() {
+    return GestureDetector(
+      onTap: () {
+        launchUrl(AppConstants.openSourceRepoURL);
+      },
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: const [
+          SizedBox(width: 24.0),
+          Text(
+            'BUILT\nWITH',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 10.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(width: 4.0),
+          FlutterLogo(size: 36.0),
+          SizedBox(width: 24.0),
+        ],
+      ),
     );
   }
 }

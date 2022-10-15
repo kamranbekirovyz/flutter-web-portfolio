@@ -18,6 +18,7 @@ dependencies:
   flutter_animator: ^3.2.2
   responsive_framework: ^0.2.0
   responsive_grid: ^2.1.0
+  super_banners: ^0.0.1
 
 dev_dependencies:
   flutter_test:

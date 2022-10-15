@@ -1,4 +1,3 @@
-import 'package:app/landing/widgets/built_with_flutter_indicator.dart';
 import 'package:app/landing/landing_header.dart';
 import 'package:app/landing/landing_body.dart';
 import 'package:flutter/material.dart';
@@ -64,12 +63,6 @@ class _LandingScreenState extends State<LandingScreen> {
           // 2. "BUILT WITH Flutter" indicator, redirects to open-source
           // repostitory containing source codes of this web app.
           ScrollUpIndicator(_scrollController),
-
-          // Vertically "BUILT WITH Flutter" indicator, while header is visible.
-          Align(
-            alignment: Alignment.topRight,
-            child: BuiltWithFlutterIndicator(_scrollController),
-          ),
         ],
       ),
     );

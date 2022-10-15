@@ -1,4 +1,3 @@
-import 'package:app/landing/widgets/interactive_image_viewer.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedImageOverlay extends StatefulWidget {

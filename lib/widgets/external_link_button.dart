@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kamranbekirovcom_website/helpers/url_launcher.dart';
+import 'package:app/helpers/url_launcher.dart';
 
 class ExternalLinkButton extends StatelessWidget {
   final String url;

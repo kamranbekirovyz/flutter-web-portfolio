@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kamranbekirovcom_website/helpers/app_constants.dart';
-import 'package:kamranbekirovcom_website/screens/landing_screen.dart';
+import 'package:app/helpers/app_constants.dart';
+import 'package:app/screens/landing_screen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class App extends StatelessWidget {

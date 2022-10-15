@@ -1,3 +1,4 @@
+import 'package:app/landing/widgets/interactive_image_viewer.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedImageOverlay extends StatefulWidget {
@@ -24,6 +25,7 @@ class _AnimatedImageOverlayState extends State<AnimatedImageOverlay> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
+      cursor: SystemMouseCursors.click,
       onEnter: (_) => setState(() => _hovered = true),
       onExit: (_) => setState(() => _hovered = false),
       child: AnimatedOpacity(

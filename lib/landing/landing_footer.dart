@@ -1,11 +1,11 @@
-import 'package:app/widgets/animated_opacity_when_hovered.dart';
+import 'package:app/landing/widgets/animated_opacity_when_hovered.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:app/helpers/app_constants.dart';
-import 'package:app/helpers/url_launcher.dart';
+import 'package:app/utilities/app_constants.dart';
+import 'package:app/utilities/url_launcher.dart';
 
-class BottomExternalLinks extends StatelessWidget {
-  const BottomExternalLinks({
+class LandingFooter extends StatelessWidget {
+  const LandingFooter({
     Key? key,
   }) : super(key: key);
 

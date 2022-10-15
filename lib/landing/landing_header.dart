@@ -1,15 +1,15 @@
-import 'package:app/helpers/app_constants.dart';
-import 'package:app/screens/landing_screen.dart';
-import 'package:app/widgets/animated_background_image.dart';
-import 'package:app/widgets/social_media_buttons.dart';
+import 'package:app/utilities/app_constants.dart';
+import 'package:app/landing/landing_screen.dart';
+import 'package:app/landing/widgets/animated_background_image.dart';
+import 'package:app/landing/widgets/social_media_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 
-class ClippedLandingHeader extends StatelessWidget {
+class LandingHeader extends StatelessWidget {
   final ScrollController scrollController;
 
-  const ClippedLandingHeader(
+  const LandingHeader(
     this.scrollController, {
     super.key,
   });

@@ -1,7 +1,7 @@
-import 'package:app/helpers/app_constants.dart';
-import 'package:app/helpers/url_launcher.dart';
+import 'package:app/utilities/app_constants.dart';
+import 'package:app/utilities/url_launcher.dart';
 import 'package:flutter/material.dart';
-import 'package:app/screens/landing_screen.dart';
+import 'package:app/landing/landing_screen.dart';
 import 'package:super_banners/super_banners.dart';
 
 class BuiltWithFlutterIndicator extends StatefulWidget {

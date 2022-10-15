@@ -1,12 +1,14 @@
+import 'package:app/landing/widgets/interactive_image_viewer.dart';
+import 'package:app/landing/widgets/source_aware_image.dart';
+import 'package:app/utilities/showcase_app_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:app/models/showcase_app.dart';
-import 'package:app/screens/landing_screen.dart';
-import 'package:app/widgets/animated_image_overlay.dart';
-import 'package:app/widgets/external_link_button.dart';
+import 'package:app/landing/landing_screen.dart';
+import 'package:app/landing/widgets/animated_image_overlay.dart';
+import 'package:app/landing/widgets/external_link_button.dart';
 
 class ShowcaseAppItem extends StatelessWidget {
-  final ShowcaseApp app;
+  final ShowcaseAppModel app;
 
   const ShowcaseAppItem(
     this.app, {
@@ -30,7 +32,21 @@ class ShowcaseAppItem extends StatelessWidget {
             bottom: 200.0,
             left: 0.0,
             right: 0.0,
-            child: AnimatedImageOverlay(app.topic),
+            child: GestureDetector(
+              // When overlay tapped, open full screen interactive image viewer.
+              onTap: () {
+                showGeneralDialog(
+                  context: context,
+                  pageBuilder: (_, __, ___) {
+                    return InteractiveImageViewer(
+                      image: app.image,
+                      isNetworkImage: app.isNetworkImage,
+                    );
+                  },
+                );
+              },
+              child: AnimatedImageOverlay(app.topic),
+            ),
           ),
         ],
       ),
@@ -43,21 +59,14 @@ class ShowcaseAppItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildImage(),
+          SourceAwareImage(
+            image: app.image,
+            isNetworkImage: app.isNetworkImage,
+          ),
           _buildBottom(),
         ],
       ),
     );
-  }
-
-  Widget _buildImage() {
-    return app.isNetworkImage
-        ? Image.network(
-            app.image,
-          )
-        : Image.asset(
-            app.image,
-          );
   }
 
   Widget _buildBottom() {

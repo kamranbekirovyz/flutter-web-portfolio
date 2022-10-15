@@ -1,6 +1,6 @@
-import 'package:app/widgets/animated_opacity_when_hovered.dart';
+import 'package:app/landing/widgets/animated_opacity_when_hovered.dart';
 import 'package:flutter/material.dart';
-import 'package:app/helpers/url_launcher.dart';
+import 'package:app/utilities/url_launcher.dart';
 
 class SocialMediaButton extends StatelessWidget {
   final String url;

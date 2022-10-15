@@ -1,5 +1,5 @@
-import 'package:app/helpers/app_constants.dart';
-import 'package:app/widgets/social_media_button.dart';
+import 'package:app/utilities/app_constants.dart';
+import 'package:app/landing/widgets/social_media_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

@@ -1,9 +1,9 @@
-import 'package:app/screens/landing_screen.dart';
+import 'package:app/landing/landing_screen.dart';
+import 'package:app/utilities/showcase_app_model.dart';
 import 'package:flutter/material.dart';
-import 'package:app/models/showcase_app.dart';
-import 'package:app/helpers/app_constants.dart';
-import 'package:app/widgets/bottom_external_links.dart';
-import 'package:app/widgets/showcase_app_item.dart';
+import 'package:app/utilities/app_constants.dart';
+import 'package:app/landing/landing_footer.dart';
+import 'package:app/landing/widgets/showcase_app_item.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 
@@ -70,7 +70,7 @@ class LandingBody extends StatelessWidget {
           const SizedBox(height: 120.0),
 
           // 2 Buttons at bottom of landing: flutter.dev, github.com.
-          const BottomExternalLinks(),
+          const LandingFooter(),
           const SizedBox(height: 120.0),
         ],
       ),

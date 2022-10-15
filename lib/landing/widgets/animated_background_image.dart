@@ -34,7 +34,7 @@ class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 552.0,
+      height: 576.0,
       width: double.maxFinite,
       child: FadeIn(
         child: Opacity(

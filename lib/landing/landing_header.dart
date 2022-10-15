@@ -39,16 +39,29 @@ class LandingHeader extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SlitInDiagonal(
-                  child: const SelectableText(
-                    AppConstants.landingTitle,
-                    style: TextStyle(
-                      fontSize: 40.0,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      letterSpacing: 4.0,
+                Row(
+                  children: [
+                    ClipOval(
+                      child: FadeInImage.assetNetwork(
+                        placeholder: 'assets/images/transparent.png',
+                        image: 'assets/images/personal-logo.png',
+                        height: 64.0,
+                        width: 64.0,
+                      ),
                     ),
-                  ),
+                    const SizedBox(width: 16.0),
+                    SlitInDiagonal(
+                      child: const SelectableText(
+                        AppConstants.landingTitle,
+                        style: TextStyle(
+                          fontSize: 40.0,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          letterSpacing: 4.0,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 22.0),
                 const Divider(

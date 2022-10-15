@@ -29,7 +29,7 @@ class LandingBody extends StatelessWidget {
             AppConstants.showcaseTitle,
             style: TextStyle(
               fontSize: 20.0,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
@@ -43,7 +43,7 @@ class LandingBody extends StatelessWidget {
             AppConstants.showcaseDescription,
             style: TextStyle(
               fontSize: 17.0,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.bold,
               color: Colors.white,
               letterSpacing: 1.8,
             ),

@@ -32,7 +32,7 @@ class ExternalLinkButton extends StatelessWidget {
               label.toUpperCase(),
               style: const TextStyle(
                 fontSize: 16.0,
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w500,
                 color: Colors.white,
                 letterSpacing: 1.4,
               ),

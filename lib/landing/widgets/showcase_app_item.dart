@@ -114,7 +114,7 @@ class ShowcaseAppItem extends StatelessWidget {
       app.name,
       style: const TextStyle(
         fontSize: 18.0,
-        fontWeight: FontWeight.w900,
+        fontWeight: FontWeight.w500,
         color: Colors.white,
         letterSpacing: 1.4,
       ),

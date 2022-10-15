@@ -55,7 +55,7 @@ class LandingHeader extends StatelessWidget {
                         AppConstants.landingTitle,
                         style: TextStyle(
                           fontSize: 40.0,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.bold,
                           color: Colors.white,
                           letterSpacing: 4.0,
                         ),

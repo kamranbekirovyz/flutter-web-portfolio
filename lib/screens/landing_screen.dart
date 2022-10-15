@@ -1,15 +1,8 @@
 import 'package:app/widgets/built_with_flutter_indicator.dart';
-import 'package:app/widgets/social_media_buttons.dart';
+import 'package:app/widgets/clipped_landing_header.dart';
+import 'package:app/widgets/landing_body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animator/flutter_animator.dart';
-import 'package:app/models/showcase_app.dart';
-import 'package:app/helpers/app_constants.dart';
-import 'package:app/widgets/animated_background_image.dart';
-import 'package:app/widgets/bottom_external_links.dart';
 import 'package:app/widgets/scroll_up_indicator.dart';
-import 'package:app/widgets/showcase_app_item.dart';
-import 'package:responsive_framework/responsive_framework.dart';
-import 'package:responsive_grid/responsive_grid.dart';
 
 const dividerColor = Color(0xFF464751);
 const primaryColor = Color.fromRGBO(47, 49, 64, 1.0);
@@ -50,129 +43,23 @@ class _LandingScreenState extends State<LandingScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipPath(
-                    clipper: DiagonalPathClipper(),
-                    child: Stack(
-                      children: [
-                        AnimatedBackgroundImage(_scrollController),
-                        Container(
-                          height: 552.0,
-                          width: double.maxFinite,
-                          color: primaryColor.withOpacity(.75),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: ResponsiveWrapper.of(context).isDesktop
-                                ? 280.0
-                                : ResponsiveWrapper.of(context).isMobile
-                                    ? 64
-                                    : 200,
-                            vertical: ResponsiveWrapper.of(context).isDesktop
-                                ? 180.0
-                                : ResponsiveWrapper.of(context).isMobile
-                                    ? 48
-                                    : 90,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SlitInDiagonal(
-                                child: const SelectableText(
-                                  AppConstants.landingTitle,
-                                  style: TextStyle(
-                                    fontSize: 40.0,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 4.0,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(height: 22.0),
-                              const Divider(
-                                thickness: 1.75,
-                                color: dividerColor,
-                              ),
-                              const SizedBox(height: 30.0),
-                              const SelectableText(
-                                AppConstants.landingMotto,
-                                style: TextStyle(
-                                  fontSize: 17.0,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.white,
-                                  letterSpacing: 1.8,
-                                ),
-                              ),
-                              const SizedBox(height: 24.0),
-                              const SocialMediaButtons()
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  ClippedLandingHeader(_scrollController),
                   const SizedBox(height: 56.0),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: ResponsiveWrapper.of(context).isDesktop
-                          ? 104.0
-                          : ResponsiveWrapper.of(context).isTablet
-                              ? 56
-                              : 24.0,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SelectableText(
-                          AppConstants.showcaseTitle,
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const SizedBox(height: 16.0),
-                        const Divider(
-                          thickness: 1.75,
-                          color: dividerColor,
-                        ),
-                        const SizedBox(height: 16.0),
-                        const SelectableText(
-                          AppConstants.showcaseDescription,
-                          style: TextStyle(
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            letterSpacing: 1.8,
-                          ),
-                        ),
-                        const SizedBox(height: 24.0),
-                        const SelectableText(
-                          AppConstants.disclaimer,
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const SizedBox(height: 56.0),
-                        ResponsiveGridList(
-                          shrinkWrap: true,
-                          minSpacing: 24.0,
-                          desiredItemWidth: 296,
-                          children: apps.map((e) {
-                            return ShowcaseAppItem(e);
-                          }).toList(),
-                        ),
-                        const SizedBox(height: 120.0),
-                        const BottomExternalLinks(),
-                        const SizedBox(height: 120.0),
-                      ],
-                    ),
-                  ),
+                  const LandingBody(),
                 ],
               ),
             ),
           ),
+
+          // Bar, visible when header is invisible, with 2 buttons:
+          //
+          // 1. Scrolls page to up when clicked.
+          //
+          // 2. "BUILT WITH Flutter" indicator, redirects to open-source
+          // repostitory containing source codes of this web app.
           ScrollUpIndicator(_scrollController),
+
+          // Vertically "BUILT WITH Flutter" indicator, while header is visible.
           Align(
             alignment: Alignment.topRight,
             child: BuiltWithFlutterIndicator(_scrollController),
@@ -180,23 +67,5 @@ class _LandingScreenState extends State<LandingScreen> {
         ],
       ),
     );
-  }
-}
-
-// Extracted from "flutter_custom_clippers" package.
-class DiagonalPathClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    final path = Path()
-      ..lineTo(0.0, size.height)
-      ..lineTo(size.width, size.height - 112.0)
-      ..lineTo(size.width, 0.0)
-      ..close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return true;
   }
 }

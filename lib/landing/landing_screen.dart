@@ -43,7 +43,6 @@ class _LandingScreenState extends State<LandingScreen> {
             child: SingleChildScrollView(
               controller: _scrollController,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Header with texts and social media buttons.
                   LandingHeader(_scrollController),

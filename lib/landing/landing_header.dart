@@ -5,7 +5,6 @@ import 'package:app/landing/widgets/animated_background_image.dart';
 import 'package:app/landing/widgets/social_media_buttons.dart';
 import 'package:app/utilities/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 
 class LandingHeader extends StatelessWidget {
   final ScrollController scrollController;
@@ -29,7 +28,7 @@ class LandingHeader extends StatelessWidget {
               horizontal: context.isDesktop
                   ? 280.0
                   : context.isMobile
-                      ? 64
+                      ? 24
                       : 200,
               vertical: context.isDesktop
                   ? 180.0
@@ -51,7 +50,7 @@ class LandingHeader extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 16.0),
-                    const Flexible(
+                    const Expanded(
                       child: DelayedWidget(
                         delayDuration: Duration(milliseconds: 1000),
                         from: DelayFrom.right,

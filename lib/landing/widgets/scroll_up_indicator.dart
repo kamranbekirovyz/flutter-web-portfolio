@@ -51,9 +51,11 @@ class _ScrollUpIndicatorState extends State<ScrollUpIndicator> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: _buildScrollUpTrigger(),
+                    Flexible(
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: _buildScrollUpTrigger(),
+                      ),
                     ),
                     MouseRegion(
                       cursor: SystemMouseCursors.click,
@@ -97,6 +99,7 @@ class _ScrollUpIndicatorState extends State<ScrollUpIndicator> {
       onTap: () {
         launchUrl(AppConstants.openSourceRepoURL);
       },
+      behavior: HitTestBehavior.translucent,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: const [

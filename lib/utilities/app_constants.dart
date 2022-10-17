@@ -9,6 +9,7 @@ abstract class AppConstants {
   static const webSiteURL = 'kamranbekirov.com';
   static const gitHubProfileURL = 'https://github.com/kamranbekirovyz';
   static const linkedInProfileURL = 'https://linkedin.com/in/kamranbekirovyz';
+  static const twitterURL = 'https://twitter.com/kamranbekirovyz';
   static const instagramProfileURL = 'https://instagram.com/kamranbekirovyz';
   static const facebookProfileURL = 'https://www.facebook.com/profile.php?id=100067620484373';
   static const eMail = 'mailto:kamranbekirovyz@gmail.com';

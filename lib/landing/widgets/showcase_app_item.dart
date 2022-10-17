@@ -53,6 +53,7 @@ class ShowcaseAppItem extends StatelessWidget {
     );
   }
 
+  // TODO: add lineheights
   Widget _buildChild() {
     return Container(
       color: cardColor,

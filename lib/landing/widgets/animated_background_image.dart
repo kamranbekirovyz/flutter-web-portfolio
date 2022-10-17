@@ -1,3 +1,4 @@
+import 'package:app/utilities/extensions.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedBackgroundImage extends StatefulWidget {
@@ -31,8 +32,9 @@ class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
 
   @override
   Widget build(BuildContext context) {
+    final height = context.isMobile ? 440.0 : 540.0;
     return SizedBox(
-      height: 576.0,
+      height: height,
       width: double.maxFinite,
       child: Opacity(
         opacity: 0.3,

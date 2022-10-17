@@ -18,7 +18,7 @@ class App extends StatelessWidget {
           debugLog: true,
           defaultScale: true,
           breakpoints: [
-            const ResponsiveBreakpoint.autoScale(450, name: MOBILE),
+            const ResponsiveBreakpoint.autoScaleDown(450, name: MOBILE),
             const ResponsiveBreakpoint.autoScale(800, name: TABLET),
             const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
           ],

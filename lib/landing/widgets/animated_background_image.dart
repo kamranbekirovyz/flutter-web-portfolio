@@ -38,9 +38,10 @@ class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
       width: double.maxFinite,
       child: Opacity(
         opacity: 0.3,
-        child: FadeInImage.assetNetwork(
-          placeholder: 'assets/images/transparent.png',
-          image: 'assets/images/background-min.jpg',
+        child: Image.asset(
+          // placeholder: 'assets/images/transparent.png',
+          // image:
+          'assets/images/background-min.jpg',
           fit: BoxFit.cover,
           alignment: Alignment(0.0, _y),
         ),

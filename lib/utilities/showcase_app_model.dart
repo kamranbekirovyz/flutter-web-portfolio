@@ -31,14 +31,14 @@ class ShowcaseAppModel {
 const apps = [
   ShowcaseAppModel.withLocalAsset(
     name: 'Tentony',
-    image: 'assets/images/apps/tentony.png',
+    image: 'assets/images/apps/tentony-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.tentony.app',
     appStoreURL: 'https://apps.apple.com/az/app/tentony/id1630425777',
     topic: 'M-commerce',
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'Badamlı',
-    image: 'assets/images/apps/badamli.png',
+    image: 'assets/images/apps/badamli-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=az.badamli.app',
     appStoreURL: 'https://apps.apple.com/az/app/badaml%C4%B1/id1627914279',
     topic: 'M-commerce',
@@ -52,7 +52,7 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'CİB',
-    image: 'assets/images/apps/cib.png',
+    image: 'assets/images/apps/cib-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=az.cib.app',
     appStoreURL: 'https://apps.apple.com/us/app/cib-az/id1541577214',
     topic: 'FinTech',
@@ -64,9 +64,9 @@ const apps = [
     appStoreURL: 'https://apps.apple.com/az/app/vadi-karqo/id1605375862',
     topic: 'Cargo',
   ),
-  ShowcaseAppModel.withNetworkAsset(
+  ShowcaseAppModel.withLocalAsset(
     name: 'MASHIN.AL',
-    image: 'assets/images/apps/mashinal.png',
+    image: 'assets/images/apps/mashinal-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=ventures.al.mashinal',
     appStoreURL: 'https://apps.apple.com/ru/app/mashin-al/id1588371190',
     topic: 'Announcements',
@@ -80,7 +80,7 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'wibty',
-    image: 'assets/images/apps/wibty.png',
+    image: 'assets/images/apps/wibty-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.wibty.wibty',
     appStoreURL: 'https://apps.apple.com/az/app/wibty/id1568298650',
     topic: 'Social Media & Music',
@@ -101,7 +101,7 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'DoctOnline',
-    image: 'assets/images/apps/doctonline.png',
+    image: 'assets/images/apps/doctonline-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.doctazer.flutterAndroid',
     appStoreURL: 'https://apps.apple.com/az/app/doctonline/id1487301839',
     topic: 'Medic Assistant',
@@ -115,7 +115,7 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'Ormado Cashbook',
-    image: 'assets/images/apps/ormado-cashbook.png',
+    image: 'assets/images/apps/ormado-cashbook-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.ormado.app',
     appStoreURL: 'https://apps.apple.com/kw/app/ormado-cashbook/id1529717238',
     topic: 'Cash Management',
@@ -129,7 +129,7 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'ManatX',
-    image: 'assets/images/apps/manatx.png',
+    image: 'assets/images/apps/manatx-min.png',
     githubURL: 'https://github.com/kamranbekirovyz/manatx-currency-converter',
     topic: 'Currency Converter',
   ),
@@ -142,7 +142,7 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'In-App Help Chatbot',
-    image: 'images/apps/cib-chatbot.png',
+    image: 'assets/images/apps/cib-chatbot-min.png',
     topic: 'Automated Chatbot',
   ),
   ShowcaseAppModel.withNetworkAsset(
@@ -154,7 +154,7 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'Warehouse Management',
-    image: 'images/apps/zamex-station.png',
+    image: 'assets/images/apps/zamex-station-min.png',
     topic: 'Warehouse Utility',
   ),
   ShowcaseAppModel.withNetworkAsset(
@@ -173,7 +173,7 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'DentiStore',
-    image: 'assets/images/apps/dentistore.png',
+    image: 'assets/images/apps/dentistore-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=az.abasoft.dentistore',
     appStoreURL: 'https://apps.apple.com/us/app/dentistore/id1576104680',
     topic: 'E-commerce',
@@ -187,7 +187,7 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'SLOOOVA',
-    image: 'assets/images/apps/slooova.png',
+    image: 'assets/images/apps/slooova-min.png',
     topic: 'Word Game',
   ),
   ShowcaseAppModel.withNetworkAsset(
@@ -219,28 +219,28 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'Rahat Kart',
-    image: 'assets/images/apps/rahat.png',
+    image: 'assets/images/apps/rahat-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=frazex.com.inloya.rahat',
     appStoreURL: 'https://apps.apple.com/us/app/rahat-kart/id1478512091',
     topic: 'Grocery store',
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'Tezibu Delivery',
-    image: 'assets/images/apps/tezibu-client.png',
+    image: 'assets/images/apps/tezibu-client-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.frazex.a7575.tezibu.client',
     appStoreURL: 'https://apps.apple.com/az/app/tezibu/id1518022392',
     topic: 'Food Delivery',
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'Tezibu Partner',
-    image: 'assets/images/apps/tezibu-partner.png',
+    image: 'assets/images/apps/tezibu-partner-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.frazex.tezibu.partner',
     appStoreURL: 'https://apps.apple.com/az/app/tezibu-partner/id1516765771',
     topic: 'Food Delivery',
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'Tezibu Courier',
-    image: 'assets/images/apps/tezibu-courier.png',
+    image: 'assets/images/apps/tezibu-courier-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.frazex.u7575.tezibu.courier',
     appStoreURL: 'https://apps.apple.com/az/app/tezibu-courier/id1517005869',
     topic: 'Food Delivery',
@@ -261,7 +261,7 @@ const apps = [
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'Nata Studio',
-    image: 'assets/images/apps/nata-studio.png',
+    image: 'assets/images/apps/nata-studio-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.frazex.loyalty.natastudio',
     appStoreURL: 'https://apps.apple.com/az/app/nata-studio/id1535811378',
     topic: 'Customer Loyalty',
@@ -273,26 +273,26 @@ const apps = [
     appStoreURL: 'https://apps.apple.com/az/app/bigchefs-az/id1517277535',
     topic: 'Customer Loyalty',
   ),
-  ShowcaseAppModel.withNetworkAsset(
+  ShowcaseAppModel.withLocalAsset(
     name: 'Music Downloader & Player',
-    image: 'assets/images/apps/docswis.png',
+    image: 'assets/images/apps/docswis-min.png',
     topic: 'Music Downloader',
   ),
-  ShowcaseAppModel.withNetworkAsset(
+  ShowcaseAppModel.withLocalAsset(
     name: 'StatsUpp - WhatsApp Status Downloader',
-    image: 'assets/images/apps/statsupp.png',
+    image: 'assets/images/apps/statsupp-min.png',
     topic: 'WhatsApp Utility',
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'LePlaisire',
-    image: 'assets/images/apps/le-plaisire.png',
+    image: 'assets/images/apps/le-plaisire-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=frazex.com.inloya.leplaisir',
     appStoreURL: 'https://apps.apple.com/az/app/le-plaisir/id1517308551',
     topic: 'Customer Loyalty',
   ),
   ShowcaseAppModel.withLocalAsset(
     name: 'Gunka Beauty House',
-    image: 'assets/images/apps/gunka-beauty-house.png',
+    image: 'assets/images/apps/gunka-beauty-house-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=frazex.com.inloya.paintnail',
     appStoreURL: 'https://apps.apple.com/az/app/gunka-beauty-house/id1518607512',
     topic: 'Customer Loyalty',

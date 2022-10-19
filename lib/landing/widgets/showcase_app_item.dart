@@ -60,9 +60,12 @@ class ShowcaseAppItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SourceAwareImage(
-            image: app.image,
-            isNetworkImage: app.isNetworkImage,
+          SizedBox(
+            height: 552.0,
+            child: SourceAwareImage(
+              image: app.image,
+              isNetworkImage: app.isNetworkImage,
+            ),
           ),
           _buildBottom(),
         ],
@@ -72,16 +75,22 @@ class ShowcaseAppItem extends StatelessWidget {
 
   Widget _buildBottom() {
     return Container(
-      height: 201.0,
+      height: 210.0,
       padding: const EdgeInsets.all(24.0).copyWith(bottom: 16.0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildAppName(),
-          const Divider(
-            color: dividerColor,
-            thickness: 1.5,
-            height: 32.0,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildAppName(),
+              const Divider(
+                color: dividerColor,
+                thickness: 1.5,
+                height: 32.0,
+              ),
+            ],
           ),
           if (app.playStoreURL != null) ...[
             ExternalLinkButton(

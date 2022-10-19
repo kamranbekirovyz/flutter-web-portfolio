@@ -13,7 +13,7 @@ class App extends StatelessWidget {
       title: AppConstants.appTitle,
       builder: (context, child) {
         return ResponsiveWrapper.builder(
-          ClampingScrollWrapper.builder(context, child!),
+          BouncingScrollWrapper.builder(context, child!),
           minWidth: 300,
           debugLog: true,
           defaultScale: true,

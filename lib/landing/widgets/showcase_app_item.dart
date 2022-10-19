@@ -29,7 +29,7 @@ class ShowcaseAppItem extends StatelessWidget {
           _buildChild(),
           Positioned(
             top: 0.0,
-            bottom: 200.0,
+            bottom: 208.0,
             left: 0.0,
             right: 0.0,
             child: GestureDetector(
@@ -60,12 +60,9 @@ class ShowcaseAppItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 552.0,
-            child: SourceAwareImage(
-              image: app.image,
-              isNetworkImage: app.isNetworkImage,
-            ),
+          SourceAwareImage(
+            image: app.image,
+            isNetworkImage: app.isNetworkImage,
           ),
           _buildBottom(),
         ],
@@ -74,9 +71,8 @@ class ShowcaseAppItem extends StatelessWidget {
   }
 
   Widget _buildBottom() {
-    return Container(
-      height: 210.0,
-      padding: const EdgeInsets.all(24.0).copyWith(bottom: 16.0),
+    return Padding(
+      padding: const EdgeInsets.all(24.0).copyWith(bottom: 8.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,

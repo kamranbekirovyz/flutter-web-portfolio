@@ -48,7 +48,7 @@ class _LandingScreenState extends State<LandingScreen> {
                   LandingHeader(_scrollController),
                   const SizedBox(height: 56.0),
 
-                  // Body with showcase apps
+                  // Body with showcase apps.
                   const LandingBody(),
                 ],
               ),

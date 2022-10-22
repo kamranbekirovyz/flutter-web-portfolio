@@ -2,7 +2,7 @@
 
 responsive layout; open-source and clean codebase.
 
-<img  src="https://raw.githubusercontent.com/kamranbekirovyz/flutter-web-potfolio/master/.docs/cover.png"  alt="cover" />
+<img  src="https://raw.githubusercontent.com/kamranbekirovyz/flutter-web-portfolio/master/.docs/cover.png"  alt="cover" />
 
 ## 🚀 Motivation
 

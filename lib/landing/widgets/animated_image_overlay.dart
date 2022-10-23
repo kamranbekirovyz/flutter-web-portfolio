@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// A widget that shows black overlay with app's topic as a text.
 class AnimatedImageOverlay extends StatefulWidget {
   final String topic;
 
@@ -32,7 +33,7 @@ class _AnimatedImageOverlayState extends State<AnimatedImageOverlay> {
         opacity: _hovered ? 1.0 : 0.0,
         child: Container(
           alignment: Alignment.center,
-          color: Colors.black54,
+          color: Colors.black45,
           child: Text(
             widget.topic,
             style: const TextStyle(

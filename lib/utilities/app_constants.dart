@@ -1,3 +1,4 @@
+// Almost all texts used through out the app.
 abstract class AppConstants {
   static const appTitle = 'Kamran Bekirov';
   static const disclaimer = 'I do not claim ownership of the projects below as some of them were developed for companies I worked for and some for clients/clients of my clients while the backend side is provided.';

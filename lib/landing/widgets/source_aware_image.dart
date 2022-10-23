@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Widget displays Image.network or Image.asset on the basis of source.
 class SourceAwareImage extends StatelessWidget {
   final String image;
   final bool isNetworkImage;

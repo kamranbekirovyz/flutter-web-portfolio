@@ -1,3 +1,4 @@
+// A model that represents portfolio apps on landing page.
 class ShowcaseAppModel {
   final String name;
   final String? appStoreURL;
@@ -28,6 +29,7 @@ class ShowcaseAppModel {
   bool get isNetworkImage => _isNetworkImage;
 }
 
+// List of apps that will be listed on landing page.
 const apps = [
   ShowcaseAppModel.withLocalAsset(
     name: 'Tentony',

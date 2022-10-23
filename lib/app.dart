@@ -11,6 +11,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppConstants.appTitle,
+
+      // Initializing responsive_framework here.
       builder: (context, child) {
         return ResponsiveWrapper.builder(
           BouncingScrollWrapper.builder(context, child!),

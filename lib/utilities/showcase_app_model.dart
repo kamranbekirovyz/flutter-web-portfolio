@@ -166,6 +166,11 @@ const apps = [
     appStoreURL: 'https://apps.apple.com/az/app/vizz/id1558819171',
     topic: 'Car Wash',
   ),
+  ShowcaseAppModel.withLocalAsset(
+    name: 'Teammers',
+    image: 'assets/images/apps/teammers.png',
+    topic: 'Jobfinder',
+  ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Trendex',
     image: 'https://play-lh.googleusercontent.com/0K7eTRgeECyz3SNSLa0_5qE_wiMCdqccMDInfvRjkFAtkQClBm1mc8lsAvIrQstWbnQ=w2880-h1640',

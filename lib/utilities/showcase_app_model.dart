@@ -16,14 +16,14 @@ class ShowcaseAppModel {
     required this.topic,
   }) : _isNetworkImage = true;
 
-  // const ShowcaseAppModel.withLocalAsset({
-  //   required this.name,
-  //   this.appStoreURL,
-  //   this.playStoreURL,
-  //   this.githubURL,
-  //   required this.image,
-  //   required this.topic,
-  // }) : _isNetworkImage = true;
+  const ShowcaseAppModel.withLocalAsset({
+    required this.name,
+    this.appStoreURL,
+    this.playStoreURL,
+    this.githubURL,
+    required this.image,
+    required this.topic,
+  }) : _isNetworkImage = true;
 
   final bool _isNetworkImage;
   bool get isNetworkImage => _isNetworkImage;
@@ -33,20 +33,20 @@ class ShowcaseAppModel {
 const apps = [
   ShowcaseAppModel.withNetworkAsset(
     name: 'Bonpara',
-    image: 'https://i.ibb.co/JxKbHPc/bonaz.png',
-    playStoreURL: 'https://play.google.com/store/apps/details?id=com.bon.app',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/bonaz.png',
+    playStoreURL: 'https://play.google.com/store/apps/details?id=com.bonpara.app',
     topic: 'Affiliate marketing',
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Badamlı',
-    image: 'https://i.ibb.co/cgXMc3J/badamli-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/badamli-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=az.badamli.app',
     appStoreURL: 'https://apps.apple.com/az/app/badaml%C4%B1/id1627914279',
     topic: 'M-commerce',
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Tentony',
-    image: 'https://i.ibb.co/4jyhcch/tentony-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/tentony-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.tentony.app',
     appStoreURL: 'https://apps.apple.com/az/app/tentony/id1630425777',
     topic: 'M-commerce',
@@ -60,7 +60,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'CİB',
-    image: 'https://i.ibb.co/vw8Dmdr/cib-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/cib-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=az.cib.app',
     appStoreURL: 'https://apps.apple.com/us/app/cib-az/id1541577214',
     topic: 'FinTech',
@@ -74,7 +74,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'MASHIN.AL',
-    image: 'https://i.ibb.co/xYHNgt4/mashinal-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/mashinal-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=ventures.al.mashinal',
     appStoreURL: 'https://apps.apple.com/ru/app/mashin-al/id1588371190',
     topic: 'Announcements',
@@ -88,7 +88,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'wibty',
-    image: 'https://i.ibb.co/4FSpQ5K/wibty-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/wibty-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.wibty.wibty',
     appStoreURL: 'https://apps.apple.com/az/app/wibty/id1568298650',
     topic: 'Social Media & Music',
@@ -109,7 +109,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'DoctOnline',
-    image: 'https://i.ibb.co/Kx4GCFy/doctonline-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/doctonline-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.doctazer.flutterAndroid',
     appStoreURL: 'https://apps.apple.com/az/app/doctonline/id1487301839',
     topic: 'Medic Assistant',
@@ -123,7 +123,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Ormado Cashbook',
-    image: 'https://i.ibb.co/JjNDGCD/ormado-cashbook-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/ormado-cashbook-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.ormado.app',
     appStoreURL: 'https://apps.apple.com/kw/app/ormado-cashbook/id1529717238',
     topic: 'Cash Management',
@@ -137,7 +137,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'ManatX',
-    image: 'https://i.ibb.co/gTTg0MJ/manatx-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/manatx-min.png',
     githubURL: 'https://github.com/kamranbekirovyz/manatx-currency-converter',
     topic: 'Currency Converter',
   ),
@@ -150,7 +150,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'In-App Help Chatbot',
-    image: 'https://i.ibb.co/PZ1tz60/cib-chatbot-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/cib-chatbot-min.png',
     topic: 'Automated Chatbot',
   ),
   ShowcaseAppModel.withNetworkAsset(
@@ -162,7 +162,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Warehouse Management',
-    image: 'https://i.ibb.co/0VxTxTZ/zamex-station-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/zamex-station-min.png',
     topic: 'Warehouse Utility',
   ),
   ShowcaseAppModel.withNetworkAsset(
@@ -174,7 +174,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Teammers',
-    image: 'https://i.ibb.co/4jyhcch/tentony-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/tentony-min.png',
     topic: 'Jobfinder',
   ),
   ShowcaseAppModel.withNetworkAsset(
@@ -186,7 +186,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'DentiStore',
-    image: 'https://i.ibb.co/fr3KFYY/dentistore-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/dentistore-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=az.abasoft.dentistore',
     appStoreURL: 'https://apps.apple.com/us/app/dentistore/id1576104680',
     topic: 'E-commerce',
@@ -200,7 +200,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'SLOOOVA',
-    image: 'https://i.ibb.co/BBSw3Ft/slooova-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/slooova-min.png',
     topic: 'Word Game',
   ),
   ShowcaseAppModel.withNetworkAsset(
@@ -232,28 +232,28 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Rahat Kart',
-    image: 'https://i.ibb.co/kx7fPwR/rahat-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/rahat-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=frazex.com.inloya.rahat',
     appStoreURL: 'https://apps.apple.com/us/app/rahat-kart/id1478512091',
     topic: 'Grocery store',
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Tezibu Delivery',
-    image: 'https://i.ibb.co/6H6mYS0/tezibu-client-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/tezibu-client-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.frazex.a7575.tezibu.client',
     appStoreURL: 'https://apps.apple.com/az/app/tezibu/id1518022392',
     topic: 'Food Delivery',
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Tezibu Partner',
-    image: 'https://i.ibb.co/7NrSQzg/tezibu-partner-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/tezibu-partner-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.frazex.tezibu.partner',
     appStoreURL: 'https://apps.apple.com/az/app/tezibu-partner/id1516765771',
     topic: 'Food Delivery',
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Tezibu Courier',
-    image: 'https://i.ibb.co/F6d0ZWV/tezibu-courier-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/tezibu-courier-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.frazex.u7575.tezibu.courier',
     appStoreURL: 'https://apps.apple.com/az/app/tezibu-courier/id1517005869',
     topic: 'Food Delivery',
@@ -274,7 +274,7 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Nata Studio',
-    image: 'https://i.ibb.co/rvDgz8x/nata-studio-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/nata-studio-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.frazex.loyalty.natastudio',
     appStoreURL: 'https://apps.apple.com/az/app/nata-studio/id1535811378',
     topic: 'Customer Loyalty',
@@ -288,24 +288,24 @@ const apps = [
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Music Downloader & Player',
-    image: 'https://i.ibb.co/CWFHxNc/docswis-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/docswis-min.png',
     topic: 'Music Downloader',
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'StatsUpp - WhatsApp Status Downloader',
-    image: 'https://i.ibb.co/N1X6NFd/statsupp-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/statsupp-min.png',
     topic: 'WhatsApp Utility',
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'LePlaisire',
-    image: 'https://i.ibb.co/JQFP6J9/le-plaisire-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/le-plaisire-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=frazex.com.inloya.leplaisir',
     appStoreURL: 'https://apps.apple.com/az/app/le-plaisir/id1517308551',
     topic: 'Customer Loyalty',
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Gunka Beauty House',
-    image: 'https://i.ibb.co/84p3T1r/gunka-beauty-house-min.png',
+    image: 'https://porelarte.tech/kamranbekirovcom/apps/gunka-beauty-house-min.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=frazex.com.inloya.paintnail',
     appStoreURL: 'https://apps.apple.com/az/app/gunka-beauty-house/id1518607512',
     topic: 'Customer Loyalty',

@@ -23,7 +23,7 @@ class LandingFooter extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
               child: Image.network(
-                'https://i.ibb.co/cwXFmMN/lockup-built-w-flutter.png',
+                'https://https://porelarte.tech/kamranbekirovcom/lockup-built-w-flutter.png',
                 color: Colors.white,
                 height: 40.0,
               ),

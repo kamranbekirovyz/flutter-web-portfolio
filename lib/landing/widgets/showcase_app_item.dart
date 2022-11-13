@@ -29,7 +29,7 @@ class ShowcaseAppItem extends StatelessWidget {
           _buildChild(),
           Positioned(
             top: 0.0,
-            bottom: 192.0,
+            // bottom: 192.0,
             left: 0.0,
             right: 0.0,
             child: GestureDetector(

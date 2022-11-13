@@ -35,7 +35,8 @@ const apps = [
     name: 'Bonpara',
     image: 'https://porelarte.tech/kamranbekirovcom/apps/bonaz.png',
     playStoreURL: 'https://play.google.com/store/apps/details?id=com.bonpara.app',
-    topic: 'Affiliate marketing',
+    appStoreURL: 'https://apps.apple.com/us/app/bonpara/id1636142117',
+    topic: 'Cashback, Coupons',
   ),
   ShowcaseAppModel.withNetworkAsset(
     name: 'Badamlı',
@@ -227,7 +228,7 @@ const apps = [
   ShowcaseAppModel.withNetworkAsset(
     name: 'BakuTransport',
     image: 'https://play-lh.googleusercontent.com/vnL2g2rQgjsSElaJSpKT8asCoPfgvgBrF8xjBUWcQbThvoIfQoK_nOIkYJnUXddR7bA=w3360-h1940',
-    githubURL: 'https://play.google.com/store/apps/details?id=com.azcode.bakutransport',
+    playStoreURL: 'https://play.google.com/store/apps/details?id=com.azcode.bakutransport',
     topic: 'Bus Tracking',
   ),
   ShowcaseAppModel.withNetworkAsset(

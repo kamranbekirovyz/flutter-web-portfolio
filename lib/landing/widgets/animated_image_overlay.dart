@@ -32,6 +32,7 @@ class _AnimatedImageOverlayState extends State<AnimatedImageOverlay> {
         duration: kThemeAnimationDuration,
         opacity: _hovered ? 1.0 : 0.0,
         child: Container(
+          height: 552.0,
           alignment: Alignment.center,
           color: Colors.black45,
           child: Text(

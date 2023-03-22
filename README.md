@@ -13,10 +13,6 @@ Demo link: <a href="https://kamranbekirovyz.github.io">kamranbekirovyz.github.io
 
 The codebase is open-source and rich in comments. Although you can use it any way you want, beware that it (my old website that was built with HTML and CSS to be more specific) was inspired and cloned from an open-source template called <a href="https://html5up.net/solid-state">Solid state</a>. So, in case of usage, I suggest you respect its authors and do not use my personal logo as it is yours. 🤓  
 
-## 🤓 Contributors
-
-<a href="https://github.com/kamranbekirovyz/flutter-web-portfolio/graphs/contributors"><img src="https://github.com/kamranbekirovyz.png"  height="75"></a>
-
 ## 🙏 Credits
 
 The design is inspired by a template from <a href="https://html5up.net">html5up.net</a> called <a href="https://html5up.net/solid-state">Solid state</a>.
